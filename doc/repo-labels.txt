@@ -1,0 +1,10 @@
+# Labels
+- enhancement - new feature, sth new
+- bug - error, problem in existing code
+- priority-low - priority: should be done after lowe priority issues
+- priority-medium - priority: should be done after medium priority issues
+- priority-high - priority: should be taken as soon as possible before low and medium issues
+- waiting-for-details - this issue is waiting for clarifications. It is marker issue. It should not be solved till label changed.
+- question - issue is in progress but developer needs more details. Issue is stopped/blocked
+- research - it needs to be done research to solve some problem, output of research is base to create enhancement
+- in-progress - in progress

@@ -1,0 +1,50 @@
+# Pull requests
+- name of feature branch for pull request ex. (replace / using -):
+1-Add-title-to-TaskData-class
+2343-Some-task-description
+
+description:
+[number of issue][-][dash-separated title of issue]
+
+- name of pull request (if possible; if not add some symbol or letter at the end) ex.:
+1 - Add title to TaskData class
+2343 - Some task description
+
+description:
+[number of issue][space][-][space][title of issue]
+
+
+# Database
+- incremental scripts
+* Encoding: UTF-8 without BOM
+* file name (should be unique in whole project):
+0.0.3-010-201905241607-tasks.sql
+0.0.3-020-201905241608-index_on_table_tasks.sql
+0.0.4-010-201905241700-index_on_table_tasks.sql
+description
+[version from pom.xml][-][subsequent number with step 10: 010, 020, 030 etc. Every next version starts from 010][-][date of file creation][-][description of change ex. name of object which is created or changed, use _ in description]
+
+- tables
+* table name should be in plural ex. not task but tasks. tasks is correct table name.
+* table name should be lower case
+* many words in table name should be concatenated by _ underscore
+
+# Languages
+- Java: standard, private methods at the end of class
+- JavaScript: camelCase for variable names (userName); uppercase and underscore for global variables and constants (USER_NAME);
+- HTML: attributes (id, class, data-) written with dash (user-name, data-order-id) except for input field name attributes (name="user_name");
+
+
+# Loggers
+- logger field in class
+private static final Logger log = LoggerFactory.getLogger(TaskService.class);
+[private static final Logger log = LoggerFactory.getLogger(][class name][.class);]
+
+only part [class name] is not constant
+
+More info about loggers see: doc/logger.txt
+
+#API
+use - in web services names
+
+#

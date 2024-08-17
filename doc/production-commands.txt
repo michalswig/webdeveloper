@@ -1,0 +1,16 @@
+# run application (you are in app folder)
+./start.sh
+
+# run application in background (you are in app folder)
+nohup ./start.sh > start.out 2> start.err < /dev/null &
+
+# kill application (you are in app folder)
+kill -9 <pid>
+
+# who is listening port
+lsof -i :8080
+ss -plnt | grep 8080
+netstat -ap | grep :9090
+
+# all working processes
+ps -ef

@@ -1,0 +1,61 @@
+# Application version in pom.xml
+<version>0.0.3</version>
+
+Given a version number MAJOR.MINOR.PATCH, increment the:
+MAJOR version when you make incompatible API changes,
+MINOR version when you add functionality in a backwards-compatible manner, and
+PATCH version when you make backwards-compatible bug fixes.
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+# Repository git
+- branches:
+* master (only one)
+* develop (only one)
+* feature branches (many)
+
+- branch of?
+* master is the main branch which stores production code
+* develop is created from master, stores code of version which is in development (current version)
+* each feature branch is created from develop
+
+- good practices:
+* update develop as often as possible
+* rebase on local computer, merge pull requests
+* keep your local repo clear, change only these files which are necessary to commit to avoid mess
+* pay special attention to merge conflicted files
+
+# Development Life Cycle
+- create master branch with stub of project (only once)
+- create develop branch from master (only once)
+- when you want to create new feature or fix some bug, update develop and create feature branch from develop (see doc/naming-conventions.txt)
+- create changes on feature branch
+- create tests (unit, integration etc) on feature branch
+- run tests locally
+- [optional] test manually if necessary
+- commit changes (you can commit many times but one commit is more elegant)
+- push your changes and branch to origin/remote
+- create pull request
+- review pull request
+- [optional] add requested changes during code review, commit, and push
+- close code review
+- QA should test (automatic and manual) if necessary
+- merge feature branch to develop (develop!!! not master!)
+
+When we want to create release
+- create git tag in repo with name release-0.0.3 (release-[current/developed version])
+- create jar for current version ex. 0.0.3
+- upload jar to the server(s) (test or production)
+- upload db incremental scripts to the server(s)
+- stop the server(s) TODO: how?
+- [optional] backup database
+- run db scripts for this version TODO: how choose?
+- copy old jar to _old_versions folder (on each server)
+- replace old jar with new one (on each server)
+- start the server(s)
+- check if application works
+- merge develop to master
+
+After release
+- update version in pom.xml
+
+

@@ -1,0 +1,46 @@
+Use slf4j logger
+
+See: https://wiki.opendaylight.org/view/BestPractices/Logging_Best_Practices
+
+# Levels
+- ERROR - generally, when problem breaks process
+This level serves as the general error facility. It should be used whenever the software encounters an unexpected error which prevents further processing. The reporting component may attempt recovery which may affect system availability or performance for a period of time, or it may forcefully terminate if it is unable to recover. This level is always reported for all software components.
+
+There are three examples when this level should be used:
+
+Incorrectable internal state inconsistency, such as when a JVM reports an OutOfMemoryError. The top-level handler would log this condition and force an JVM exit, as it is not capable of continuing execution.
+Internal state inconsistency, which is correctable by flushing and re-creating the state. In this case the component would log an event, which would indicate what assertion has been violated and that the state has been flushed to recover.
+Request-level processing error, e.g. the application encounters an error which is preventing a particular request from completing, but there is no indication of systematic failure which would prevent other requests from being successfully processed.
+The primary audience are monitoring systems and system operators, as the events reported have impact on operational performance of the system.
+
+- WARN - when problem does not break the process but it is strongly recommended to look at it closes
+This level serves for events which indicate irregular circumstances, from which we have a clearly-defined recovery strategy which has no impact on system availability or performance as seen by the reporting component. Events on this level are usually reported.
+
+A typical example for a candidate event is when a software component detects inconsistency within an external data feed and it performs a corrective action to compensate for it. Let's say we process a list of key/value pairs and encounter a duplicate key: we can either overwrite the old occurance, ignore the new occurance or abort. If we take any of the first two actions, we should report a WARN event. If we take the third, we should report an ERROR event.
+
+The primary audience of these events are automated systems, operators and administrators, as this level of messages indicate non-optimal system operation (e.g. data feeds could use normalization) or may forebode a future failure.
+
+- INFO - info about changing state of application/class/component
+This level serves for events which constitute major state changes within a software component -- such as initialization, shutdown, persistent resource allocation, etc. -- which are part of normal operations. Events on this level are typically reported for non-library components.
+
+Each software component should log at least four events on this level:
+
+when it starts its initialization
+when it becomes operational,
+when it starts orderly shutdown,
+just before it terminates normally
+The primary audience of these events are operators and administrators, who use them to confirm major interactions (such as restarting components) have occurred within the system.
+
+- DEBUG - detail info which helps to investigate problem, it can lead to find out the problem requested by other log with ERROR level, very important places which helps to trace and find the problem
+This is the coarse diagnostic level, serving for events which indicate internal state transitions and detail what processing occurs. Events on this level are usually not reported, but are enabled when a subsystem's code flows need to be examined for troubleshooting purposes.
+
+Placement and amount of events generated at this level are at the discretion of the development engineers, as both relate directly to the component logic. The amount of detail in these events has to be limited to a single line of information useful for pinning down a misbehaving software component in an seemingly normal system and should be directly cross-referencable to either previous DEBUG events or component configuration. A hard requirement is that there has to be at least one flow control statement (such as if, for, while) or a call to a different software component between two DEBUG event triggers.
+
+Primary audience of these events are administrators and support personnel diagnosing operational issues, mainly in real-time as they occur on the system.
+
+- TRACE - very detailed info about processing, every iteration of loop or even many log trace in each iteration etc.
+This is the fine-grained diagnostic level, serving for events which indicate internal state transitions in full detail. Events on this level are not reported, but have to be explicitly enabled and may be collected for support purposes.
+
+Placement, amount and contents of these events is completely at the description of development engineers. These events are completely release-specific, may change even between minor releases. Examples of events reported at this level would be method entry and exit, possibly including detailed input arguments, and dumps of internal data as it is being modified.
+
+Primary audience of these events are senior support personnel and development engineers diagnosing operational irregularities which relate directly to code structure, mainly offline after being captured on a live system.
