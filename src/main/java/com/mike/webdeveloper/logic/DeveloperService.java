@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+
 @Service
 public class DeveloperService {
     private final DeveloperRepository developerRepository;
@@ -76,7 +77,7 @@ public class DeveloperService {
         }
     }
 
-    public DeveloperData createDeveloper(DeveloperData developerData) {
+    public Long createDeveloper(DeveloperData developerData) {
         Developer developer = new Developer();
         developer.setName(developerData.getName());
         developer.setAddressCountry(developerData.getAddressCountry());
@@ -94,10 +95,10 @@ public class DeveloperService {
         developer.setCreatedAt(LocalDateTime.now());
         developer.setUpdatedAt(LocalDateTime.now());
         developerRepository.save(developer);
-        return new DeveloperData(developer);
+        return new DeveloperData(developer).getId();
     }
 
-    public DeveloperData updateDeveloper(Long id, DeveloperData developerData) {
+    public Long updateDeveloper(Long id, DeveloperData developerData) {
         Developer developer = developerRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Developer with id " + id + " not found"));
         developer.setName(developerData.getName());
@@ -115,7 +116,7 @@ public class DeveloperService {
         developer.setCode(developerData.getCode());
         developer.setUpdatedAt(LocalDateTime.now());
         developerRepository.save(developer);
-        return new DeveloperData(developer);
+        return new DeveloperData(developer).getId();
     }
 
     public List<Developer> getAllActiveDevelopers() {
