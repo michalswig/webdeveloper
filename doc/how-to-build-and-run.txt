@@ -1,3 +1,0 @@
-plugin - org.codehaus.mojo - to build Angular Project with Maven
-set in angular.json options/outputPath: your Angular folder in Java package
-mvn clean compile spring-boot:run
