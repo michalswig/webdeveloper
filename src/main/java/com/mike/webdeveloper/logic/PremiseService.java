@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+
 @Service
 public class PremiseService {
 
@@ -65,10 +66,18 @@ public class PremiseService {
                 .toList();
     }
 
-    public List<PremiseData> getPremiseDataByInvestmentId(PremiseSearchFilter filter) {
+    public List<PremiseData> getPremiseDataByInvestmentIdAndSetTranslation(PremiseSearchFilter filter) {
         return premiseRepository.findAllByInvestmentId(filter.getId()).stream()
+                .filter(premise -> premise.getDeletedAt() == null)
                 .map(PremiseData::new)
                 .map(premiseData -> setTranslationsAndLanguageCodeToPremiseData(premiseData, filter.getLanguageCode()))
+                .toList();
+    }
+
+    public List<PremiseData> getPremiseDataByInvestmentId(PremiseSearchFilter filter) {
+        return premiseRepository.findAllByInvestmentId(filter.getId()).stream()
+                .filter(premise -> premise.getDeletedAt() == null)
+                .map(PremiseData::new)
                 .toList();
     }
 
@@ -143,6 +152,7 @@ public class PremiseService {
                 .findById(id)
                 .orElseThrow(() -> new RuntimeException("Premise not found"));
         premise.setDeletedAt(LocalDateTime.now());
+        premiseRepository.save(premise);
     }
 
 }
