@@ -1,0 +1,109 @@
+<div class="developer-section">
+  <h2>Developer</h2>
+  <button class="btn add-btn" (click)="addNewDeveloper()" *ngIf="adminView">Add New Developer</button>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address Country</th>
+      <th>Address Street</th>
+      <th>Building Number</th>
+      <th>Postal Code</th>
+      <th *ngIf="adminView">Select</th>
+      <th *ngIf="!adminView">Edit</th>
+      <!--      <th *ngIf="!adminView">Delete</th> NOT TO DELETE YOURSELF-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let developer of developers">
+      <td>{{ developer.name }}</td>
+      <td>{{ developer.addressCountry }}</td>
+      <td>{{ developer.addressStreet }}</td>
+      <td>{{ developer.addressBuildingNumber }}</td>
+      <td>{{ developer.addressPostalCode }}</td>
+      <td *ngIf="adminView"><button class="btn select-btn" (click)="selectDeveloperForAdmin(developer)">Select</button></td>
+      <td *ngIf="!adminView"><button class="btn edit-btn" (click)="editDeveloper(developer)">Edit</button></td>
+      <!--      <td *ngIf="!adminView"><button class="btn delete-btn" (click)="deleteDeveloper(developer)">Delete</button></td> NOT TO DELETE YOURSELF-->
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedDeveloper" class="developer-form">
+    <h3>{{ isNewDeveloper ? 'Add New Developer' : 'Edit Developer' }}</h3>
+    <form [formGroup]="developerForm" (ngSubmit)="isNewDeveloper ? saveNewDeveloper() : updateDeveloper()">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name">
+      <div *ngIf="developerForm.controls['name'].invalid && developerForm.controls['name'].touched">
+        <small *ngIf="developerForm.controls['name'].errors?.['required']">Name is required.</small>
+        <small *ngIf="developerForm.controls['name'].errors?.['minlength']">Name must be at least 3 characters long.</small>
+      </div>
+
+      <label for="addressCountry">Address Country:</label>
+      <input id="addressCountry" formControlName="addressCountry">
+      <div *ngIf="developerForm.controls['addressCountry'].invalid && developerForm.controls['addressCountry'].touched">
+        <small>Address Country is required.</small>
+      </div>
+
+      <label for="addressStreet">Address Street:</label>
+      <input id="addressStreet" formControlName="addressStreet">
+      <div *ngIf="developerForm.controls['addressStreet'].invalid && developerForm.controls['addressStreet'].touched">
+        <small>Address Street is required.</small>
+      </div>
+
+      <label for="addressBuildingNumber">Building Number:</label>
+      <input id="addressBuildingNumber" formControlName="addressBuildingNumber">
+      <div *ngIf="developerForm.controls['addressBuildingNumber'].invalid && developerForm.controls['addressBuildingNumber'].touched">
+        <small>Building Number is required.</small>
+      </div>
+
+      <label for="addressFlatNumber">Flat Number:</label>
+      <input id="addressFlatNumber" formControlName="addressFlatNumber">
+
+      <label for="addressPostalCode">Postal Code:</label>
+      <input id="addressPostalCode" formControlName="addressPostalCode">
+      <div *ngIf="developerForm.controls['addressPostalCode'].invalid && developerForm.controls['addressPostalCode'].touched">
+        <small>Postal Code is required.</small>
+      </div>
+
+      <label for="telephoneNumber">Telephone Number:</label>
+      <input id="telephoneNumber" formControlName="telephoneNumber">
+      <div *ngIf="developerForm.controls['telephoneNumber'].invalid && developerForm.controls['telephoneNumber'].touched">
+        <small *ngIf="developerForm.controls['telephoneNumber'].errors?.['pattern']">Telephone Number must be 10 digits long.</small>
+        <small *ngIf="developerForm.controls['telephoneNumber'].errors?.['required']">Telephone Number is required.</small>
+      </div>
+
+      <label for="faxNumber">Fax Number:</label>
+      <input id="faxNumber" formControlName="faxNumber">
+      <div *ngIf="developerForm.controls['faxNumber'].invalid && developerForm.controls['faxNumber'].touched">
+        <small *ngIf="developerForm.controls['faxNumber'].errors?.['pattern']">Fax Number must be 10 digits long.</small>
+      </div>
+
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email">
+      <div *ngIf="developerForm.controls['email'].invalid && developerForm.controls['email'].touched">
+        <small *ngIf="developerForm.controls['email'].errors?.['required']">Email is required.</small>
+        <small *ngIf="developerForm.controls['email'].errors?.['email']">Invalid email format.</small>
+      </div>
+
+      <label for="taxIdentificationNumber">Tax Identification Number:</label>
+      <input id="taxIdentificationNumber" formControlName="taxIdentificationNumber">
+      <div *ngIf="developerForm.controls['taxIdentificationNumber'].invalid && developerForm.controls['taxIdentificationNumber'].touched">
+        <small>Tax Identification Number is required.</small>
+      </div>
+
+      <label for="city">City:</label>
+      <select id="city" formControlName="cityId" required>
+        <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
+      </select>
+      <div *ngIf="developerForm.controls['cityId'].invalid && developerForm.controls['cityId'].touched">
+        <small>City is required.</small>
+      </div>
+
+      <label for="logoUrl">Logo URL:</label>
+      <input id="logoUrl" formControlName="logoUrl">
+
+      <button type="submit" class="btn save-btn">{{ isNewDeveloper ? 'Add' : 'Save' }}</button>
+      <button type="button" class="btn cancel-btn" (click)="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+</div>

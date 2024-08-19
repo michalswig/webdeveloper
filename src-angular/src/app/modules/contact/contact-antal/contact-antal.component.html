@@ -1,0 +1,28 @@
+<div *ngIf="developers">
+  <mat-card *ngFor="let developer of developers.developers" class="contact-card">
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+      <div class="contact-item">
+        <mat-icon aria-hidden="false" aria-label="Location">place</mat-icon>
+        <div>
+          <div>{{ developer.name }}</div>
+          <div>{{ developer.addressStreet }} {{ developer.addressBuildingNumber }}/{{ developer.addressFlatNumber }}
+            , {{ developer.addressPostalCode }}, {{ developer.addressCountry }}
+          </div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <mat-icon aria-hidden="false" aria-label="Phone">phone</mat-icon>
+        <div>{{ developer.telephoneNumber }}</div>
+      </div>
+      <div class="contact-item">
+        <mat-icon aria-hidden="false" aria-label="Fax">fax</mat-icon>
+        <div>{{ developer.faxNumber }}</div>
+      </div>
+      <div class="contact-item">
+        <mat-icon aria-hidden="false" aria-label="Email">email</mat-icon>
+        <div>{{ developer.email }}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

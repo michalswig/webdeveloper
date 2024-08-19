@@ -1,0 +1,30 @@
+.footer-container {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  border-top: 1px solid #e9ecef;
+  font-family: 'Roboto', sans-serif;
+
+  p {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+
+    &.footer-link {
+      margin-top: 10px;
+      a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        &:hover {
+          text-decoration: underline;
+          color: #0056b3;
+        }
+      }
+    }
+  }
+}

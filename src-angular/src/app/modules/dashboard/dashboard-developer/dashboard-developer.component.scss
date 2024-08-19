@@ -1,0 +1,44 @@
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+
+    .logo {
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+    }
+
+    .user-info {
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .admin-body {
+    display: flex;
+    flex: 1;
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      background-color: #ecf0f1;
+      overflow-y: auto;
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+}

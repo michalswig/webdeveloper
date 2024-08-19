@@ -1,0 +1,61 @@
+{
+  "antal": {
+    "welcome.msg": "Witamy w Antal Development",
+    "welcome.desc": "Twój super dom, stworzony z precyzją i troską przez czołowych architektów jutra.",
+    "welcome.more": "Dowiedz się więcej"
+  },
+  "domdevelopment": {
+    "welcome.msg": "Witamy w DOM Development",
+    "welcome.desc": "Twój wymarzony dom, stworzony z precyzją i troską przez czołowych architektów jutra.",
+    "welcome.more": "Dowiedz się więcej"
+  },
+  "shared": {
+    "header.cities": "Miasta",
+    "header.contact": "Kontakt",
+    "header.language.polish": "Polski",
+    "header.language.english": "Angielski",
+    "header.language.selection": "Język",
+    "log.user.name": "Nazwa użytkownika",
+    "log.login": "Zaloguj się",
+    "log.logout": "Wyloguj się",
+    "log.password": "Hasło",
+    "footer.copy.rights": "Prawa autorskie",
+    "investments.list.none": "Obecnie brak inwestycji",
+    "more": "Dowiedz się więcej",
+    "premise.ask": "Zapytaj o to mieszkanie",
+    "premise.rooms": "Pokoje",
+    "premise.floor": "Piętro",
+    "premise.area": "Powierzchnia",
+    "premise.pricePerM": "Cena za m2",
+    "premise.totalPrice": "Cena całkowita",
+    "premise.technicalStatus": "Stan techniczny",
+    "premise.salesStatus": "Stan sprzedaży",
+    "premise.exposure": "Ekspozycja",
+    "filter.price": "Filtruj według ceny:",
+    "filter.room.count": "Filtruj według liczby pokoi:",
+    "filter.area": "Filtruj według powierzchni:",
+    "room": {
+      "one": "Pokój",
+      "other": "Pokoje"
+    },
+    "paginator.items.per.page": "Elementów na stronę:",
+    "paginator.next.page": "Następna strona",
+    "paginator.previous.page": "Poprzednia strona",
+    "paginator.first.page": "Pierwsza strona",
+    "paginator.last.page": "Ostatnia strona",
+    "paginator.range": "{{start}} - {{end}} z {{length}}",
+    "paginator.range.of": "z",
+    "error.username.required": "Nazwa użytkownika jest wymagana",
+    "error.password.required": "Hasło jest wymagane",
+    "error.login.failed": "Nazwa użytkownika lub hasło są nieprawidłowe. Spróbuj ponownie.",
+    "error.unknown": "Wystąpił błąd. Spróbuj ponownie później.",
+    "header.dashboard": "Panel"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "developers": "Deweloperzy",
+    "investments": "Inwestycje",
+    "buildings": "Budynki",
+    "premises": "Lokale"
+  }
+}

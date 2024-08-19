@@ -1,0 +1,27 @@
+.contact-card {
+  width: 100%;
+  max-width: 600px; // Adjust the width as needed
+  margin: 0 auto;
+
+  .mat-card-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    mat-icon {
+      margin-right: 8px;
+    }
+
+    span {
+      margin-right: 4px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

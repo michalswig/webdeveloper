@@ -1,0 +1,14 @@
+<mat-card class="investment-card">
+  <mat-card-header>
+    <div mat-card-avatar class="investment-image"></div>
+    <mat-card-title>{{ investment.name }}</mat-card-title>
+    <mat-card-subtitle>{{ investment.addressStreet }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/img/domdevelopment/domdevelopment_home_page.jpg" alt="Osiedle Harmonia">
+  <mat-card-content>antal
+    <p>{{ investment.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button [routerLink]="['/premises', investment.id]">VIEW DETAILS</button>
+  </mat-card-actions>
+</mat-card>

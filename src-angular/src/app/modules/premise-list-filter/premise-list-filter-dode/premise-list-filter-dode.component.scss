@@ -1,0 +1,48 @@
+.filter-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  flex-wrap: wrap; // Added to allow wrapping on smaller screens
+}
+
+.filter-container {
+  flex: 1;
+  margin: 0 20px;
+  text-align: center;
+  min-width: 200px; // Ensures a minimum width
+}
+
+.filter-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.price-slider, .rooms-slider, .area-slider {
+  width: 100%;
+}
+
+.price-display, .rooms-display, .area-display {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .filter-wrapper {
+    flex-direction: column; // Change to column for stacking
+    align-items: flex-start; // Align items to the start
+  }
+
+  .filter-container {
+    margin-bottom: 20px; // Add margin to separate stacked items
+  }
+}

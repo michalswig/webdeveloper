@@ -1,0 +1,84 @@
+/* Basic styling for mat-toolbar */
+mat-toolbar {
+  padding: 15px 30px; /* Increase padding for a taller toolbar */
+  box-shadow: 0 1px 2px rgba(0,0,0,.1); /* More pronounced shadow for depth */
+  background-color: #ffffff; /* A light, neutral background color */
+  color: #333; /* Dark color for contrast */
+  transition: all 0.3s ease; /* Smooth transition for any size changes */
+
+  .toolbar-logo {
+    height: 100px; /* Increase logo size for more prominence */
+    cursor: pointer;
+    margin-right: 30px; /* More space after the logo */
+  }
+
+  .mat-button {
+    font-size: 20px; /* Increase font size for the links */
+    margin: 0 20px; /* More space between buttons */
+    padding: 10px 0; /* More padding for touch targets */
+
+    &:hover {
+      background-color: rgba(0,0,0,0.05); /* Slight hover effect */
+    }
+
+    i.material-icons {
+      vertical-align: middle;
+      margin-right: 8px; /* Add margin to the right of the icon */
+    }
+
+    .menu-text {
+      vertical-align: middle;
+    }
+  }
+
+  .contact-button .material-icons {
+    margin-right: 8px; /* Ensures spacing for the contact button icon */
+  }
+
+  .mat-menu-item {
+    font-size: 20px; /* Larger font size for menu items */
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  [matMenuTriggerFor="language_menu"] {
+    &:after {
+      content: '\f3c5'; /* 'language' icon from Material Icons */
+      font-family: 'Material Icons';
+      font-size: 24px; /* Bigger icon size */
+      line-height: 1;
+      padding-left: 5px;
+      vertical-align: middle;
+    }
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  mat-toolbar {
+    padding: 10px 15px; /* Slightly reduce padding on smaller screens */
+
+    .toolbar-logo {
+      height: 60px; /* Adjust logo size for mobile */
+    }
+
+    .mat-button {
+      font-size: 18px; /* Slightly reduce font size for mobile */
+      margin: 0 10px; /* Reduce margin between buttons */
+    }
+
+    .mat-menu-item {
+      font-size: 18px; /* Slightly reduce menu item font size for mobile */
+    }
+
+    [matMenuTriggerFor="language_menu"]:after {
+      font-size: 20px; /* Adjust icon size for mobile */
+    }
+
+    .menu-text {
+      display: none; /* Hide the text */
+    }
+  }
+}

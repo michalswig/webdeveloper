@@ -1,0 +1,64 @@
+.premise-card {
+  max-width: 400px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+
+  .premise-image {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mat-card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .mat-card-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .details {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .floor {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    .new-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #009688;
+    }
+  }
+
+  .more-info-btn {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #009688;
+    margin-top: 15px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+  }
+}
+

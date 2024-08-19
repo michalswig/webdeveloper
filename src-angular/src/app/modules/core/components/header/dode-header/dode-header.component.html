@@ -1,0 +1,42 @@
+<nav>
+  <mat-toolbar color="primary">
+    <img src="{{url}}" alt="Logo" class="toolbar-logo" [routerLink]="['/']">
+
+    <button mat-button [matMenuTriggerFor]="cities_menu" matTooltip="Select a City" matTooltipPosition="above">
+      <i class="material-icons">location_city</i><span class="menu-text">{{ 'shared.header.cities' | translate }}</span>
+    </button>
+    <mat-menu #cities_menu="matMenu">
+      <button *ngFor="let city of cities" mat-menu-item [routerLink]="['/city', city.id]">
+        {{ city.name }}
+      </button>
+    </mat-menu>
+
+    <button mat-button [routerLink]="['/contact']" matTooltip="Contact Us" matTooltipPosition="above" class="contact-button">
+      <i class="material-icons">contact_mail</i>
+      <span class="menu-text">{{ 'shared.header.contact' | translate }}</span>
+    </button>
+
+    <span class="spacer"></span>
+
+    <button mat-button *ngIf="(isLoggedIn$ | async)" [routerLink]="['/dashboard']" matTooltip="Go to Dashboard" matTooltipPosition="above">
+      <i class="material-icons">dashboard</i><span class="menu-text">{{ 'shared.header.dashboard' | translate }}</span>
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="language_menu" matTooltip="Select Language" matTooltipPosition="above">
+      <i class="material-icons">language</i><span class="menu-text">{{ 'shared.header.language.selection' | translate }}</span>
+    </button>
+    <mat-menu #language_menu="matMenu">
+      <button mat-menu-item (click)="switchLanguage('pl')">{{ 'shared.header.language.polish' | translate }}</button>
+      <button mat-menu-item (click)="switchLanguage('en')">{{ 'shared.header.language.english' | translate }}</button>
+    </mat-menu>
+
+    <button mat-button *ngIf="(isLoggedIn$ | async)" (click)="logout()" matTooltip="Logout" matTooltipPosition="above">
+      <i class="material-icons">exit_to_app</i><span class="menu-text">{{ 'shared.log.logout' | translate }}</span>
+    </button>
+
+    <button mat-button *ngIf="!(isLoggedIn$ | async)" [routerLink]="['/login']" matTooltip="Login" matTooltipPosition="above">
+      <i class="material-icons">login</i><span class="menu-text">{{ 'shared.log.login' | translate }}</span>
+    </button>
+
+  </mat-toolbar>
+</nav>
