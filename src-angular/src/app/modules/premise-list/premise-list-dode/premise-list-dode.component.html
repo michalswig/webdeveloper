@@ -1,0 +1,16 @@
+<app-premise-list-filter-dode [investmentId]="investmentId" (filterCriteriaChange)="onFilterCriteriaChange($event)"></app-premise-list-filter-dode>
+
+<div class="card-container" *ngIf="filteredPremises.length > 0">
+  <ng-container *ngFor="let premise of pagedPremises">
+    <app-premise-dode [premise]="premise"></app-premise-dode>
+  </ng-container>
+</div>
+
+<mat-paginator class="paginator-container"
+               [length]="filteredPremises.length"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]"
+               aria-label="Select page">
+</mat-paginator>
+
+<h5 *ngIf="filteredPremises.length === 0">Aktualnie brak mieszkań</h5>

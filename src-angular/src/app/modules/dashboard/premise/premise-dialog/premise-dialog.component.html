@@ -1,0 +1,68 @@
+<h1 mat-dialog-title>{{ isEditMode ? 'Edit Premise' : 'Add New Premise' }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="premiseForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput formControlName="type">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Number</mat-label>
+      <input matInput formControlName="number" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Floor</mat-label>
+      <input matInput formControlName="floor" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Surface Per Sq Meter</mat-label>
+      <input matInput formControlName="surfacePerSqMeter" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Price Per Sq Meter</mat-label>
+      <input matInput formControlName="pricePerSqMeter" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Total Price</mat-label>
+      <input matInput formControlName="totalPrice" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Number of Rooms</mat-label>
+      <input matInput formControlName="numberOfRooms" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Technical Status</mat-label>
+      <input matInput formControlName="technicalStatus">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Sales Status</mat-label>
+      <input matInput formControlName="salesStatus">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Exposure</mat-label>
+      <input matInput formControlName="exposure">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Building ID</mat-label>
+      <input matInput formControlName="buildingId" type="number">
+    </mat-form-field>
+
+    <mat-checkbox formControlName="balcony">Balcony</mat-checkbox>
+    <mat-checkbox formControlName="garden">Garden</mat-checkbox>
+    <mat-checkbox formControlName="terrace">Terrace</mat-checkbox>
+    <mat-checkbox formControlName="loggia">Loggia</mat-checkbox>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [disabled]="!premiseForm.valid" (click)="onSave()">Save</button>
+</div>

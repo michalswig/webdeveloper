@@ -1,0 +1,6 @@
+<div class="card-container" *ngIf="investments.length > 0">
+  <ng-container *ngFor="let investment of investments">
+    <app-investment-dode [investment]="investment"></app-investment-dode>
+  </ng-container>
+</div>
+<h5 *ngIf="investments.length === 0">{{ 'shared.investments.list.none' }}</h5>

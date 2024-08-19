@@ -1,0 +1,17 @@
+<mat-card class="premise-card">
+  <mat-card-header>
+    <mat-card-title>Osiedle antal</mat-card-title>
+    <mat-card-subtitle>Opis</mat-card-subtitle>
+  </mat-card-header>
+  <!--      <img mat-card-image [src]="premise.imageUrl" alt="{{ premise.name }}">-->
+  <mat-card-content>
+    <p>{{ premise.surfacePerSqMeter | number }} m² - {{ premise.numberOfRooms }} pokoje</p>
+    <p>{{ premise.floor }} piętro</p>
+    <div class="price">
+      <span class="new-price">{{ premise.totalPrice | currency:'PLN' }}</span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>{{'dowiedz się więcej'}}</button>
+  </mat-card-actions>
+</mat-card>

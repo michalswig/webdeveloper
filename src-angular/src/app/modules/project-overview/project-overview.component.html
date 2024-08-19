@@ -1,0 +1,93 @@
+<div class="container">
+  <section class="section project-introduction">
+    <div class="intro-content">
+      <div class="intro-image">
+        <img src="assets/img/overview/entry_pic.jpg" alt="Entry Image">
+      </div>
+      <div class="intro-text">
+        <h1>Project Overview - Real Estate Management App</h1>
+        <p>
+          Unveiling the innovative project that redefines efficiency and user experience in real estate management. Dive
+          into a comprehensive showcase of advanced technologies and methodologies used to create a robust, scalable,
+          and user-friendly application designed to streamline real estate operations and enhance customer engagement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section technologies">
+    <h2>Technologies Used</h2>
+    <div class="technologies-list">
+      <div class="technology" *ngFor="let tech of technologies">
+        <img [src]="tech.logo" alt="{{ tech.name }} logo">
+        <div>
+          <h3>{{ tech.name }}</h3>
+          <p>{{ tech.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section functionality-description">
+    <h2>Description Functionality</h2>
+    <div class="functionality-steps">
+      <div class="step" *ngFor="let screenshot of functionalitySteps" (click)="openDialog(screenshot)">
+        <h3>{{ screenshot.title }}</h3>
+        <p>{{ screenshot.description }}</p>
+        <div class="step-images">
+          <img *ngFor="let image of screenshot.images" [src]="image.url" alt="{{ image.alt }}">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section screenshots">
+    <h2>Chosen Screens</h2>
+    <div class="screenshot-list">
+      <mat-card *ngFor="let screenshot of screenshots" (click)="openDialog(screenshot)">
+        <mat-card-header>
+          <mat-card-title>{{ screenshot.title }}</mat-card-title>
+          <mat-card-subtitle>{{ screenshot.description }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="screenshot.images[0].url" alt="{{ screenshot.title }}">
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="section highlights">
+    <h2>Project Highlights</h2>
+    <div class="highlight-list">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let highlight of highlights">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ highlight.title }}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ highlight.description }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <pre><code>{{ highlight.code }}</code></pre>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>
+
+  <section class="section contact">
+    <h2>Contact</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <p>If you have any questions or want to know more about the project, feel free to reach out:</p>
+        <ul>
+          <li>Email: <a href="mailto:m.swigost@gmail.com">email</a></li>
+          <li>Phone: <a href="tel:+48604121746">+48 604 121 746</a></li>
+          <li>GitHub: <a href="https://github.com/yourprofile" target="_blank">GitHub Profile</a></li>
+          <li>CV: <a href="assets/img/overview/Swigost_Michał_CV.pdf" target="_blank">View CV</a></li>
+        </ul>
+      </div>
+      <div class="contact-photo">
+        <img src="assets/img/overview/mike_photo.jpg" alt="Mike Photo">
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,43 @@
+.investment-card {
+  max-width: 350px;
+  margin: 20px;
+  box-shadow: 0 6px 10px rgba(0,0,0,.1);
+  border-radius: 8px;
+  transition: transform .3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+  .mat-card-header {
+    align-items: center;
+    .mat-card-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .mat-card-subtitle {
+      font-size: 0.9rem;
+      color: rgba(0, 0, 0, 0.54);
+    }
+  }
+  .mat-card-image {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .mat-card-content {
+    font-size: 0.9rem;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #009688; // Teal color to match your theme
+    }
+  }
+}

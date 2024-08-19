@@ -1,0 +1,13 @@
+<mat-card class="investment-card">
+  <img mat-card-image src="assets/img/domdevelopment/domdevelopment_home_page.jpg" alt="{{ investment.name }}">
+  <mat-card-header>
+    <mat-card-title>{{ investment.name }}</mat-card-title>
+    <mat-card-subtitle>{{ investment.addressStreet }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ descriptionTranslation | truncate:100:true}}</p>
+  </mat-card-content>
+  <mat-card-actions class="card-actions">
+    <button mat-button [routerLink]="['/premises', investment.id]">{{ 'shared.more' | translate }}</button>
+  </mat-card-actions>
+</mat-card>

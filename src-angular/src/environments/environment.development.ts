@@ -1,0 +1,21 @@
+export const environment = {
+  production: false,
+  API_BASE_URL: 'https://localhost:8081/api',
+  API_SYSTEM_CONFIG: 'https://localhost:8081/api/system/config/properties',
+  API_CITIES_BY_DEVELOPER_ENDPOINT: '/cities_by_developer',
+  API_CITIES_ENDPOINT: '/cities',
+  API_DEVELOPER_BY_SYSTEM_CODE_ENDPOINT: '/developers/code',
+  API_INVESTMENTS_ENDPOINT: '/investments',
+  API_PREMISES_ENDPOINT: '/premises',
+  API_LOGIN_ENDPOINT: '/auth/login',
+  ERROR_MESSAGE: 'An error has occurred',
+  API_ENCRYPTION_KEY: '/auth/encryption',
+  attributes: {
+    SALES_STATUS: 'salesStatus',
+    TECHNICAL_STATUS: 'technicalStatus',
+    EXPOSURE: 'exposure',
+    INVESTMENT: 'investment',
+    DESCRIPTION: 'description',
+  },
+  cryptoKey: '2B8gYvT3QUHvWaUQ1UJmbksIfBhPfA3PIvnOeGyvXzI',
+};

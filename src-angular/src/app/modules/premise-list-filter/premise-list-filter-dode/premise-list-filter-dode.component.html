@@ -1,0 +1,37 @@
+<div class="filter-wrapper">
+  <div class="filter-container">
+    <span class="filter-label">{{ 'shared.filter.price' | translate }}</span>
+    <mat-slider class="price-slider" [min]="minAllowedPrice" [max]="maxAllowedPrice" step="10000">
+      <input matInput [value]="minPrice" (input)="onMinPriceChange($event)" matSliderStartThumb>
+      <input matInput [value]="maxPrice" (input)="onMaxPriceChange($event)" matSliderEndThumb>
+    </mat-slider>
+    <div class="price-display">
+      <span class="price-from">{{ formatPrice(minPrice) }}</span>
+      <span class="price-to">{{ formatPrice(maxPrice) }}</span>
+    </div>
+  </div>
+
+  <div class="filter-container">
+    <span class="filter-label">{{ 'shared.filter.room.count' | translate }}</span>
+    <mat-slider class="rooms-slider" [min]="minAllowedRoomCount" [max]="maxAllowedRoomCount" step="1">
+      <input matInput [value]="minRoomCount" (input)="onMinRoomCountChange($event)" matSliderStartThumb>
+      <input matInput [value]="maxRoomCount" (input)="onMaxRoomCountChange($event)" matSliderEndThumb>
+    </mat-slider>
+    <div class="rooms-display">
+      <span class="rooms-from">{{ minRoomCount }} {{ minRoomCount | roomPlural }}</span>
+      <span class="rooms-to">{{ maxRoomCount }} {{ maxRoomCount | roomPlural }}</span>
+    </div>
+  </div>
+
+  <div class="filter-container">
+    <span class="filter-label">{{ 'shared.filter.area' | translate }}</span>
+    <mat-slider class="area-slider" [min]="minAllowedArea" [max]="maxAllowedArea" step="1">
+      <input matInput [value]="minArea" (input)="onMinAreaChange($event)" matSliderStartThumb>
+      <input matInput [value]="maxArea" (input)="onMaxAreaChange($event)" matSliderEndThumb>
+    </mat-slider>
+    <div class="area-display">
+      <span class="area-from">{{ minArea }} m²</span>
+      <span class="area-to">{{ maxArea }} m²</span>
+    </div>
+  </div>
+</div>

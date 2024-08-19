@@ -1,0 +1,31 @@
+<div class="login-wrapper mt-3">
+  <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+    <div>
+      <mat-form-field>
+        <mat-label>{{ 'shared.log.user.name' | translate }}</mat-label>
+        <input matInput [(ngModel)]="username" name="username" required #usernameField="ngModel" autocomplete="username">
+        <mat-error *ngIf="usernameField.invalid && usernameField.touched">
+          {{ 'shared.error.username.required' | translate }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>{{ 'shared.log.password' | translate }}</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password" required #passwordField="ngModel" autocomplete="current-password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" type="button" [attr.aria-label]="hide ? 'Hide password' : 'Show password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="passwordField.invalid && passwordField.touched">
+          {{ 'shared.error.password.required' | translate }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <div class="d-flex justify-content-end">
+      <button mat-raised-button color="primary" [disabled]="f.invalid">{{ 'shared.log.login' | translate }}</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,140 @@
+.premise-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #34495e;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+
+    &.add-btn {
+      background-color: #3498db;
+      color: #fff;
+
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+
+    &.edit-btn {
+      background-color: #f39c12;
+      color: #fff;
+
+      &:hover {
+        background-color: #e67e22;
+      }
+    }
+
+    &.delete-btn {
+      background-color: #e74c3c;
+      color: #fff;
+
+      &:hover {
+        background-color: #c0392b;
+      }
+    }
+
+    &.save-btn {
+      background-color: #2ecc71;
+      color: #fff;
+
+      &:hover {
+        background-color: #27ae60;
+      }
+    }
+
+    &.cancel-btn {
+      background-color: #95a5a6;
+      color: #fff;
+
+      &:hover {
+        background-color: #7f8c8d;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #34495e;
+      color: #ecf0f1;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    td {
+      button {
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .premise-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin: 10px 0 5px;
+        font-weight: bold;
+      }
+
+      input, select {
+        padding: 10px;
+        border: 1px solid #bdc3c7;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .btn {
+        width: fit-content;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: white;
+}
+
+.mat-select-panel {
+  max-height: 200px;
+  overflow-y: auto;
+}

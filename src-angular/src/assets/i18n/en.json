@@ -1,0 +1,61 @@
+{
+  "antal": {
+    "welcome.msg": "Welcome to Antal Development",
+    "welcome.desc": "Your super home, crafted with precision and care by the leading architects of tomorrow.",
+    "welcome.more": "Discover More"
+  },
+  "domdevelopment": {
+    "welcome.msg": "Welcome to DOM Development",
+    "welcome.desc": "Your dream home, crafted with precision and care by the leading architects of tomorrow.",
+    "welcome.more": "Discover More"
+  },
+  "shared": {
+    "header.cities": "Cities",
+    "header.contact": "Contact",
+    "header.language.polish": "Polish",
+    "header.language.english": "English",
+    "header.language.selection": "Language",
+    "log.user.name": "User Name",
+    "log.login": "Login",
+    "log.logout": "Logout",
+    "log.password": "Password",
+    "footer.copy.rights": "Copy Rights",
+    "investments.list.none": "Currently no investments",
+    "more": "Find out more",
+    "premise.ask": "Ask about this premise",
+    "premise.rooms": "Rooms",
+    "premise.floor": "Floor",
+    "premise.area": "Area",
+    "premise.pricePerM": "Price per m2",
+    "premise.totalPrice": "Total price",
+    "premise.technicalStatus": "Technical status",
+    "premise.salesStatus": "Sales status",
+    "premise.exposure": "Exposure",
+    "filter.price": "Filter by price:",
+    "filter.room.count": "Filter by room count:",
+    "filter.area": "Filter by area:",
+    "room": {
+      "one": "Room",
+      "other": "Rooms"
+    },
+    "paginator.items.per.page": "Items per page:",
+    "paginator.next.page": "Next page",
+    "paginator.previous.page": "Previous page",
+    "paginator.first.page": "First page",
+    "paginator.last.page": "Last page",
+    "paginator.range": "{{start}} - {{end}} of {{length}}",
+    "paginator.range.of": "of",
+    "error.username.required": "User Name is required",
+    "error.password.required": "Password is required",
+    "error.login.failed": "Username or password is incorrect. Please try again.",
+    "error.unknown": "An error occurred. Please try again later.",
+    "header.dashboard": "Dashboard"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "developers": "Developers",
+    "investments": "Investments",
+    "buildings": "Buildings",
+    "premises": "Premises"
+  }
+}

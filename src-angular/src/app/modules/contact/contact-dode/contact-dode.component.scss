@@ -1,0 +1,78 @@
+.contact-card {
+  max-width: 600px;
+  margin: 2em auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.contact-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.16);
+}
+
+.mat-card-header {
+  background-color: transparent;
+  color: #333;
+  padding: 24px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 300; /* Lighter font weight */
+  color: #555; /* Slightly lighter color */
+  margin-bottom: 0.5em;
+}
+
+.mat-card-content {
+  padding: 24px;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+
+  mat-icon {
+    margin-right: 16px;
+    color: #3F51B5; /* Indigo 500 */
+    font-size: 1.25rem;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.contact-item-icon {
+  width: 24px; /* Adjust the size of your icons */
+  height: 24px; /* Adjust the size of your icons */
+  margin-right: 8px; /* Adjust the space between icon and text */
+}
+
+/* Interactivity for clickable items */
+a {
+  text-decoration: none;
+  color: #3F51B5;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #FF4081;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-card {
+    margin: 1em;
+    border-radius: 8px;
+  }
+}
+
+/* Add padding and margin tweaks as needed for smaller screens */

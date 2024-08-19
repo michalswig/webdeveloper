@@ -1,0 +1,77 @@
+<div class="premise-section">
+  <h2>Premises Management</h2>
+
+  <div *ngIf="!selectedDeveloper">
+    <h3>Select a Developer</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Developer</mat-label>
+      <mat-select (selectionChange)="selectDeveloper($event.value)">
+        <mat-option *ngFor="let developer of developers" [value]="developer">
+          {{ developer.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="selectedDeveloper">
+    <h3>Premises for {{ selectedDeveloper.name }}</h3>
+    <button class="btn add-btn" (click)="addNewPremise()">Add New Premise</button>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Nb</th>
+        <th>Floor</th>
+        <th>Surf PerSqM</th>
+        <th>$ PerSqM</th>
+        <th>$ Total</th>
+        <th>Rooms</th>
+        <th>Tech</th>
+        <th>Sales</th>
+        <th>Side</th>
+        <th>Balcony</th>
+        <th>Garden</th>
+        <th>Terrace</th>
+        <th>Loggia</th>
+        <th>Bdg ID</th>
+        <th>Edit</th>
+        <th>Del</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let premise of pagedPremises">
+        <td>{{ premise.id }}</td>
+        <td>{{ premise.type }}</td>
+        <td>{{ premise.number }}</td>
+        <td>{{ premise.floor }}</td>
+        <td>{{ premise.surfacePerSqMeter }}</td>
+        <td>{{ premise.pricePerSqMeter }}</td>
+        <td>{{ premise.totalPrice }}</td>
+        <td>{{ premise.numberOfRooms }}</td>
+        <td>{{ premise.technicalStatus }}</td>
+        <td>{{ premise.salesStatus }}</td>
+        <td>{{ premise.exposure }}</td>
+        <td>{{ premise.balcony ? 'Yes' : 'No' }}</td>
+        <td>{{ premise.garden ? 'Yes' : 'No'  }}</td>
+        <td>{{ premise.terrace ? 'Yes' : 'No'  }}</td>
+        <td>{{ premise.loggia ? 'Yes' : 'No'  }}</td>
+        <td>{{ premise.buildingId }}</td>
+        <td>
+          <button class="btn-edit" (click)="editPremise(premise)">Edit</button>
+        </td>
+        <td>
+          <button class="btn-delete" (click)="deletePremise(premise)">Del</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <mat-paginator [length]="premises.length"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   (page)="onPageChange($event)">
+    </mat-paginator>
+
+  </div>
+</div>
